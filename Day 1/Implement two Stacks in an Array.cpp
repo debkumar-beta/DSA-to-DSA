@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class twoStacks {
-	int* arr;
+class twoStacks
+{
+	int *arr;
 	int size;
 	int top1, top2;
 
@@ -17,37 +18,43 @@ public:
 
 	void push1(int x)
 	{
-		if (top1 > 0) {
+		if (top1 > 0)
+		{
 			top1--;
 			arr[top1] = x;
 		}
-		else {
+		else
+		{
 			cout << "Stack Overflow"
-				<< " By element : " << x << endl;
+				 << " By element : " << x << endl;
 			return;
 		}
 	}
 
 	void push2(int x)
 	{
-		if (top2 < size - 1) {
+		if (top2 < size - 1)
+		{
 			top2++;
 			arr[top2] = x;
 		}
-		else {
+		else
+		{
 			cout << "Stack Overflow"
-				<< " By element : " << x << endl;
+				 << " By element : " << x << endl;
 			return;
 		}
 	}
 	int pop1()
 	{
-		if (top1 <= size / 2) {
+		if (top1 <= size / 2)
+		{
 			int x = arr[top1];
 			top1++;
 			return x;
 		}
-		else {
+		else
+		{
 			cout << "Stack UnderFlow";
 			exit(1);
 		}
@@ -55,12 +62,14 @@ public:
 
 	int pop2()
 	{
-		if (top2 >= size / 2 + 1) {
+		if (top2 >= size / 2 + 1)
+		{
 			int x = arr[top2];
 			top2--;
 			return x;
 		}
-		else {
+		else
+		{
 			cout << "Stack UnderFlow" << endl;
 			exit(1);
 		}
@@ -75,9 +84,9 @@ int main()
 	ts.push1(11);
 	ts.push2(7);
 	cout << "Popped element from stack1 is "
-		<< ": " << ts.pop1() << endl;
+		 << ": " << ts.pop1() << endl;
 	ts.push2(40);
 	cout << "Popped element from stack2 is "
-		<< ": " << ts.pop2() << endl;
+		 << ": " << ts.pop2() << endl;
 	return 0;
 }
